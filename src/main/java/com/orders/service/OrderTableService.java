@@ -25,9 +25,11 @@ public class OrderTableService {
 			orderTable.setOrdeDate(LocalDateTime.now());
 			orderTable.setModifiedDate(LocalDate.now());
 			orderTable.setCreatedDate(LocalDate.now());
-			
+			orderTable.setCreatedBy(orderTable.getUserId());
+//			orderTable.setStatus();
 			orderTableRepository.save(orderTable);
 		} catch (DataAccessException e) {
+	e.printStackTrace();
 			throw new ServiceException(e.getMessage());
 		}
 	}
