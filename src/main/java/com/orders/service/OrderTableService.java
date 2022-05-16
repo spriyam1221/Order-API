@@ -24,9 +24,9 @@ public class OrderTableService {
 	public void save (OrderTable orderTable)throws ValidationException, ServiceException {
 		try {
 
-			orderTable.setOrdeDate(LocalDateTime.now());
-			orderTable.setModifiedDate(LocalDate.now());
-			orderTable.setCreatedDate(LocalDate.now());
+			orderTable.setOrderDate(LocalDateTime.now());
+			orderTable.setModifiedDate(LocalDateTime.now());
+			orderTable.setCreatedDate(LocalDateTime.now());
 			orderTable.setCreatedBy(orderTable.getUserId());
 //			orderTable.setStatus();
 			orderTableRepository.save(orderTable);

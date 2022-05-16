@@ -1,6 +1,8 @@
 package com.orders.model;
 
-import java.time.LocalDate;
+
+
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -8,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,17 +26,23 @@ import lombok.ToString;
 public class OrderTable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int order_id ;
+	public int orderId ;
+	
 	@Column(name = "user_id")
 	public int userId;
+	@Column(name="total_price")
+	public int totalPrice;
 	@Column(name = "order_date")
-	public LocalDateTime ordeDate;
+	 @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	public LocalDateTime orderDate;
 	@Column(name = "status")
 	public String status;
 	@Column(name = "modified_date")
-	public LocalDate modifiedDate;
+	 @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	public LocalDateTime modifiedDate;
 	@Column(name = "created_date")
-	public LocalDate createdDate;
+	 @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	public LocalDateTime createdDate;
 	@Column(name = "created_by")
 	public int createdBy;
 	@Column(name = "comments")
