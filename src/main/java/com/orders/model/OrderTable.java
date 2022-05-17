@@ -47,5 +47,8 @@ public class OrderTable {
 	public int createdBy;
 	@Column(name = "comments")
 	public String comments;
+	
+	
+	public String description;
 
 }
